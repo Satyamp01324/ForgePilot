@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.vsix
+.env*
+*.key
+*.pem
+demo-workspaces/
+
+submission/*.mp4

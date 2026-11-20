@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{csp}}; script-src 'nonce-{{nonce}}';">
+<link rel="stylesheet" href="{{css}}">
+<title>ForgePilot AI</title>
+</head>
+<body>
+<header><div><strong>ForgePilot AI</strong><p id="connection"></p></div><button id="settings" class="secondary">Settings</button></header>
+<form id="prompt-form">
+<label for="mode">Mode</label>
+<select id="mode"><option value="agent">Agent Mode</option><option value="inline">Inline Edit</option></select>
+<label for="prompt">Instruction</label>
+<textarea id="prompt" rows="4" maxlength="12000" placeholder="Describe the change. Use @file:path or @symbol:name."></textarea>
+<div class="actions"><button id="send" type="submit">Send</button><button id="stop" class="secondary" type="button">Stop</button><button id="retry" class="secondary" type="button">Retry</button></div>
+</form>
+<p id="status" role="status"></p>
+<pre id="response" hidden></pre>
+<details id="activity-panel" open hidden><summary>Agent activity and verification</summary><ol id="activity"></ol></details>
+<details id="context-panel" hidden><summary>ContextLens</summary><div id="context"></div></details>
+<section id="review" hidden><h2>Change review</h2><div id="changes"></div><div class="actions" id="review-actions"></div></section>
+<button id="undo" class="secondary" hidden>Undo last transaction</button>
+<script nonce="{{nonce}}" src="{{js}}"></script>
+</body></html>

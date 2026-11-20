@@ -1,0 +1,146 @@
+1
+00:00:00,000 --> 00:00:08,000
+ForgePilot AI is a native Visual Studio Code
+extension. On the official Flask repository, we will
+show
+
+2
+00:00:08,000 --> 00:00:15,000
+inline editing, autonomous repository work, and
+recovery from an actual model failure.
+
+3
+00:00:15,000 --> 00:00:21,000
+The extension connects to TrueForge on loopback port
+eighty seven ninety. TrueForge handles the model
+
+4
+00:00:21,000 --> 00:00:28,000
+session, streaming, and tool calls. Scoped workspace
+tools return context and stage proposals. The
+
+5
+00:00:28,000 --> 00:00:34,000
+developer reviews and approves each change in Visual
+Studio Code.
+
+6
+00:00:34,000 --> 00:00:42,000
+Here is the actual inline edit. The developer selects
+Flask’s debug flag function and requests support
+
+7
+00:00:42,000 --> 00:00:51,000
+for off and disabled as case insensitive false values.
+The model runs through TrueForge and sends a
+
+8
+00:00:51,000 --> 00:01:00,000
+proposal to the staging tool. The native diff displays
+the change. One hunk is accepted and applied. The
+
+9
+00:01:00,000 --> 00:01:08,000
+output panel shows the seventeen passing debug flag
+checks.
+
+10
+00:01:08,000 --> 00:01:14,000
+The checks covered unset values, existing false
+values, both new values, uppercase variants, and
+positive
+
+11
+00:01:14,000 --> 00:01:20,000
+values. ForgePilot Undo restored the original helper.
+
+12
+00:01:20,000 --> 00:01:27,000
+For the multi file task, the request was to add a
+built in Flask config command with valid JSON,
+
+13
+00:01:27,000 --> 00:01:33,000
+recursive secret masking, tests, and documentation.
+The instruction gave the agent the goal without
+
+14
+00:01:33,000 --> 00:01:40,000
+supplying file paths.
+
+15
+00:01:40,000 --> 00:01:48,000
+This is genuine recorded agent activity. The model
+used search and read tools through TrueForge. It
+
+16
+00:01:48,000 --> 00:01:57,000
+independently opened the CLI implementation, the CLI
+tests, and several documentation files. When a
+
+17
+00:01:57,000 --> 00:02:05,000
+literal search returned no hits, Context Lens
+suggested related files that the agent could inspect.
+
+18
+00:02:05,000 --> 00:02:13,000
+A focused retry used symbol hints and staged
+executable CLI code. We tested that candidate in a
+temporary
+
+19
+00:02:13,000 --> 00:02:22,000
+copy. The command exited with status one because it
+could not serialize a time delta config value.
+
+20
+00:02:22,000 --> 00:02:30,000
+Recursive masking was also missing. We withheld the
+candidate.
+
+21
+00:02:30,000 --> 00:02:37,000
+For the resilience task, a disposable model profile
+points at an unused local port. The actual TrueForge
+
+22
+00:02:37,000 --> 00:02:44,000
+request returns a connection refused error. The editor
+stays responsive. Git status and tracked file
+
+23
+00:02:44,000 --> 00:02:50,000
+checksums match. After restoring a valid model
+profile, the next TrueForge turn completes the inline
+
+24
+00:02:50,000 --> 00:02:57,000
+task.
+
+25
+00:02:57,000 --> 00:03:03,000
+ForgePilot keeps changes staged until review and
+verifies the original snapshot before applying an
+
+26
+00:03:03,000 --> 00:03:09,000
+accepted hunk. A separate live Stop test confirmed
+cancellation. Nine offline checks and ninety three
+
+27
+00:03:09,000 --> 00:03:15,000
+baseline Flask tests passed. Agent pytest remained
+disabled when isolation could not start.
+
+28
+00:03:15,000 --> 00:03:22,000
+The verified outcomes are inline editing and safe
+recovery. The multi file run demonstrated discovery
+and
+
+29
+00:03:22,000 --> 00:03:29,000
+staging, with a failed CLI verification. ForgePilot
+AI. Understand. Engineer. Verify.
+
